@@ -1,0 +1,11 @@
+form action="/sample/#{@user.id}" method='post'
+  select name='category'
+    -for cat in @categories
+      option value="#{cat.id}"
+        = cat.name
+
+
+.samples
+   ul
+    -for sample in @samples
+      li= sample.activity.name
